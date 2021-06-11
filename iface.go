@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/filecoin-project/go-state-types/abi"
-	"github.com/filecoin-project/specs-actors/actors/runtime/proof"
+	proof5 "github.com/filecoin-project/specs-actors/v5/actors/runtime/proof"
 	"github.com/ipfs/go-cid"
 )
 
@@ -41,15 +41,19 @@ func SealCommitPhase2([]byte, abi.SectorNumber, abi.ActorID) ([]byte, error) {
 	return nil, nil
 }
 
+func AggregateSealProofs(proof5.AggregateSealVerifyProofAndInfos, [][]byte) (out []byte, err error) {
+	return nil, nil
+}
+
 func ClearCache(uint64, string) error {
 	return nil
 }
 
-func GenerateWinningPoSt(abi.ActorID, SortedPrivateSectorInfo, abi.PoStRandomness) ([]proof.PoStProof, error) {
+func GenerateWinningPoSt(abi.ActorID, SortedPrivateSectorInfo, abi.PoStRandomness) ([]proof5.PoStProof, error) {
 	return nil, nil
 }
 
-func GenerateWindowPoSt(abi.ActorID, SortedPrivateSectorInfo, abi.PoStRandomness) ([]proof.PoStProof, []abi.SectorNumber, error) {
+func GenerateWindowPoSt(abi.ActorID, SortedPrivateSectorInfo, abi.PoStRandomness) ([]proof5.PoStProof, []abi.SectorNumber, error) {
 	return nil, nil, nil
 }
 
@@ -60,7 +64,7 @@ type (
 		CacheDirPath     string
 		PoStProofType    abi.RegisteredPoStProof
 		SealedSectorPath string
-		SectorInfo       proof.SectorInfo
+		SectorInfo       proof5.SectorInfo
 	}
 )
 
@@ -68,15 +72,19 @@ func NewSortedPrivateSectorInfo(...PrivateSectorInfo) SortedPrivateSectorInfo {
 	return SortedPrivateSectorInfo{}
 }
 
-func VerifySeal(proof.SealVerifyInfo) (bool, error) {
+func VerifySeal(proof5.SealVerifyInfo) (bool, error) {
 	return true, nil
 }
 
-func VerifyWinningPoSt(proof.WinningPoStVerifyInfo) (bool, error) {
+func VerifyAggregateSeals(proof5.AggregateSealVerifyProofAndInfos) (bool, error) {
 	return true, nil
 }
 
-func VerifyWindowPoSt(proof.WindowPoStVerifyInfo) (bool, error) {
+func VerifyWinningPoSt(proof5.WinningPoStVerifyInfo) (bool, error) {
+	return true, nil
+}
+
+func VerifyWindowPoSt(proof5.WindowPoStVerifyInfo) (bool, error) {
 	return true, nil
 }
 
