@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/filecoin-project/go-state-types/abi"
-	"github.com/filecoin-project/specs-actors/actors/runtime/proof"
+	"github.com/filecoin-project/specs-actors/v5/actors/runtime/proof"
 	"github.com/ipfs/go-cid"
 )
 
@@ -99,4 +99,12 @@ func GeneratePoStFallbackSectorChallenges(proofType abi.RegisteredPoStProof, min
 
 func GenerateSingleVanillaProof(replica PrivateSectorInfo, challange []uint64) ([]byte, error) {
 	return nil, nil
+}
+
+func AggregateSealProofs(aggregateInfo proof.AggregateSealVerifyProofAndInfos, proofs [][]byte) (out []byte, err error) {
+	return nil, nil
+}
+
+func VerifyAggregateSeals(aggregate proof.AggregateSealVerifyProofAndInfos) (bool, error) {
+	return true, nil
 }
