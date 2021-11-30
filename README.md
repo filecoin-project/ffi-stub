@@ -10,7 +10,7 @@ in tests that do not require real proofs.
 In your go.mod:
 
 ```
-replace github.com/filecoin-project/filecoin-ffi => github.com/filecoin-project/ffi-stub v0.1.0
+replace github.com/filecoin-project/filecoin-ffi => github.com/filecoin-project/ffi-stub ${version}
 ```
 
 ## License
