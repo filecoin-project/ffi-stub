@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/filecoin-project/go-state-types/abi"
-	"github.com/filecoin-project/specs-actors/v5/actors/runtime/proof"
+	"github.com/filecoin-project/specs-actors/v7/actors/runtime/proof"
 	"github.com/ipfs/go-cid"
 )
 
@@ -106,5 +106,94 @@ func AggregateSealProofs(aggregateInfo proof.AggregateSealVerifyProofAndInfos, p
 }
 
 func VerifyAggregateSeals(aggregate proof.AggregateSealVerifyProofAndInfos) (bool, error) {
+	return true, nil
+}
+
+type FunctionsSectorUpdate struct{}
+
+var SectorUpdate = FunctionsSectorUpdate{}
+
+func (FunctionsSectorUpdate) EncodeInto(
+	proofType abi.RegisteredUpdateProof,
+	newReplicaPath string,
+	newReplicaCachePath string,
+	sectorKeyPath string,
+	sectorKeyCachePath string,
+	stagedDataPath string,
+	pieces []abi.PieceInfo,
+) (sealedCID cid.Cid, unsealedCID cid.Cid, err error) {
+	return cid.Undef, cid.Undef, nil
+}
+
+func (FunctionsSectorUpdate) DecodeFrom(
+	proofType abi.RegisteredUpdateProof,
+	outDataPath string,
+	replicaPath string,
+	sectorKeyPath string,
+	sectorKeyCachePath string,
+	unsealedCID cid.Cid,
+) error {
+	return nil
+}
+
+func (FunctionsSectorUpdate) RemoveData(
+	proofType abi.RegisteredUpdateProof,
+	sectorKeyPath string,
+	sectorKeyCachePath string,
+	replicaPath string,
+	replicaCachePath string,
+	dataPath string,
+	unsealedCID cid.Cid,
+) error {
+	return nil
+}
+
+func (FunctionsSectorUpdate) GenerateUpdateVanillaProofs(
+	proofType abi.RegisteredUpdateProof,
+	oldSealedCID cid.Cid,
+	newSealedCID cid.Cid,
+	unsealedCID cid.Cid,
+	newReplicaPath string,
+	newReplicaCachePath string,
+	sectorKeyPath string,
+	sectorKeyCachePath string,
+) ([][]byte, error) {
+	return nil, nil
+}
+
+func (FunctionsSectorUpdate) VerifyVanillaProofs(
+	proofType abi.RegisteredUpdateProof,
+	oldSealedCID cid.Cid,
+	newSealedCID cid.Cid,
+	unsealedCID cid.Cid,
+	vanillaProofs [][]byte,
+) (bool, error) {
+	return true, nil
+}
+
+func (FunctionsSectorUpdate) GenerateUpdateProofWithVanilla(
+	proofType abi.RegisteredUpdateProof,
+	oldSealedCID cid.Cid,
+	newSealedCID cid.Cid,
+	unsealedCID cid.Cid,
+	vanillaProofs [][]byte,
+) ([]byte, error) {
+	return nil, nil
+}
+
+func (FunctionsSectorUpdate) GenerateUpdateProof(
+	proofType abi.RegisteredUpdateProof,
+	oldSealedCID cid.Cid,
+	newSealedCID cid.Cid,
+	unsealedCID cid.Cid,
+	newReplicaPath string,
+	newReplicaCachePath string,
+	sectorKeyPath string,
+	sectorKeyCachePath string,
+) ([]byte, error) {
+	return nil, nil
+}
+
+func (FunctionsSectorUpdate) VerifyUpdateProof(info proof.ReplicaUpdateInfo) (bool, error) {
 	return true, nil
 }
