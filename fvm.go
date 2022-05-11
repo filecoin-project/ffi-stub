@@ -21,3 +21,34 @@ type FVMOpts struct {
 	Manifest       cid.Cid
 	Tracing        bool
 }
+
+type ApplyRet struct {
+	Return             []byte
+	ExitCode           uint64
+	GasUsed            int64
+	MinerPenalty       abi.TokenAmount
+	MinerTip           abi.TokenAmount
+	BaseFeeBurn        abi.TokenAmount
+	OverEstimationBurn abi.TokenAmount
+	Refund             abi.TokenAmount
+	GasRefund          int64
+	GasBurned          int64
+	ExecTraceBytes     []byte
+	FailureInfo        string
+}
+
+func CreateFVM(*FVMOpts) (*FVM, error) {
+	return &FVM{}, nil
+}
+
+func (*FVM) ApplyMessage(msgBytes []byte, chainLen uint) (*ApplyRet, error) {
+	return nil, nil
+}
+
+func (*FVM) ApplyImplicitMessage(msgBytes []byte) (*ApplyRet, error) {
+	return nil, nil
+}
+
+func (*FVM) Flush() (cid.Cid, error) {
+	return cid.Undef, nil
+}
