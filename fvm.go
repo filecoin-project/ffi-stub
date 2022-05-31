@@ -1,7 +1,7 @@
 package ffi
 
 import (
-	"github.com/filecoin-project/ffi-stub/cgo"
+	"github.com/filecoin-project/filecoin-ffi/cgo"
 	"github.com/filecoin-project/go-state-types/abi"
 	"github.com/filecoin-project/go-state-types/network"
 	"github.com/ipfs/go-cid"
