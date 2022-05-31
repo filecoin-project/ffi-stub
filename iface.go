@@ -197,3 +197,40 @@ func (FunctionsSectorUpdate) GenerateUpdateProof(
 func (FunctionsSectorUpdate) VerifyUpdateProof(info proof.ReplicaUpdateInfo) (bool, error) {
 	return true, nil
 }
+
+func GenerateWinningPoStWithVanilla(
+	proofType abi.RegisteredPoStProof,
+	minerID abi.ActorID,
+	randomness abi.PoStRandomness,
+	proofs [][]byte,
+) ([]proof.PoStProof, error) {
+	return nil, nil
+}
+
+func GenerateWindowPoStWithVanilla(
+	proofType abi.RegisteredPoStProof,
+	minerID abi.ActorID,
+	randomness abi.PoStRandomness,
+	proofs [][]byte,
+) ([]proof.PoStProof, error) {
+	return nil, nil
+}
+
+type PartitionProof proof.PoStProof
+
+func GenerateSinglePartitionWindowPoStWithVanilla(
+	proofType abi.RegisteredPoStProof,
+	minerID abi.ActorID,
+	randomness abi.PoStRandomness,
+	proofs [][]byte,
+	partitionIndex uint,
+) (*PartitionProof, error) {
+	return nil, nil
+}
+
+func MergeWindowPoStPartitionProofs(
+	proofType abi.RegisteredPoStProof,
+	partitionProofs []PartitionProof,
+) (*proof.PoStProof, error) {
+	return nil, nil
+}
