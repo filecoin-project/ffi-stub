@@ -20,6 +20,9 @@ type FVMOpts struct {
 	StateBase      cid.Cid
 	Manifest       cid.Cid
 	Tracing        bool
+
+	Debug         bool
+	ActorRedirect cid.Cid
 }
 
 type ApplyRet struct {
