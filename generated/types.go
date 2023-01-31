@@ -1,3 +1,4 @@
+//lint:file-ignore U1000 Ignore all unused code, it's generated
 package generated
 
 // FCPResponseStatus as declared in filecoin-ffi/filcrypto.h:31
