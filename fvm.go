@@ -14,12 +14,17 @@ type FVMOpts struct {
 	Externs    cgo.Externs
 
 	Epoch          abi.ChainEpoch
+	Timestamp      uint64
+	ChainID        uint64
 	BaseFee        abi.TokenAmount
 	BaseCircSupply abi.TokenAmount
 	NetworkVersion network.Version
 	StateBase      cid.Cid
 	Manifest       cid.Cid
 	Tracing        bool
+
+	Debug         bool
+	ActorRedirect cid.Cid
 }
 
 type ApplyRet struct {
@@ -35,6 +40,8 @@ type ApplyRet struct {
 	GasBurned          int64
 	ExecTraceBytes     []byte
 	FailureInfo        string
+	EventsRoot         *cid.Cid
+	EventsBytes        []byte
 }
 
 func CreateFVM(*FVMOpts) (*FVM, error) {

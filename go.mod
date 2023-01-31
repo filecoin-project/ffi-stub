@@ -4,10 +4,10 @@ go 1.18
 
 require (
 	github.com/filecoin-project/filecoin-ffi v0.30.4-0.20220519234331-bfd1f5f9fe38
-	github.com/filecoin-project/go-address v0.0.6
-	github.com/filecoin-project/go-state-types v0.1.4
-	github.com/filecoin-project/specs-actors/v7 v7.0.0-rc1
-	github.com/ipfs/go-cid v0.1.0
+	github.com/filecoin-project/go-address v1.1.0
+	github.com/filecoin-project/go-state-types v0.10.0-alpha.7
+	github.com/filecoin-project/specs-actors/v7 v7.0.0
+	github.com/ipfs/go-cid v0.2.0
 	github.com/ipfs/go-ipfs-blockstore v1.1.2
 )
 
@@ -22,10 +22,10 @@ require (
 	github.com/ipfs/go-datastore v0.5.0 // indirect
 	github.com/ipfs/go-ipfs-ds-help v1.1.0 // indirect
 	github.com/ipfs/go-ipfs-util v0.0.2 // indirect
-	github.com/ipfs/go-ipld-cbor v0.0.6-0.20211211231443-5d9b9e1f6fa8 // indirect
+	github.com/ipfs/go-ipld-cbor v0.0.6 // indirect
 	github.com/ipfs/go-ipld-format v0.2.0 // indirect
 	github.com/ipfs/go-log v1.0.4 // indirect
-	github.com/ipfs/go-log/v2 v2.0.5 // indirect
+	github.com/ipfs/go-log/v2 v2.1.2-0.20200626104915-0016c0b4b3e4 // indirect
 	github.com/ipfs/go-metrics-interface v0.0.1 // indirect
 	github.com/jbenet/goprocess v0.1.4 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
