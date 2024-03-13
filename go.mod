@@ -2,7 +2,6 @@ module github.com/filecoin-project/ffi-stub
 
 go 1.21
 
-
 require (
 	github.com/filecoin-project/filecoin-ffi v0.30.4-0.20220519234331-bfd1f5f9fe38
 	github.com/filecoin-project/go-address v1.1.0
