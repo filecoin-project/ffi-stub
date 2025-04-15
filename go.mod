@@ -1,7 +1,6 @@
 module github.com/filecoin-project/ffi-stub
 
-go 1.23
-toolchain go1.24.1
+go 1.23.0
 
 require (
 	github.com/filecoin-project/filecoin-ffi v0.30.4-0.20220519234331-bfd1f5f9fe38
